@@ -14,10 +14,8 @@
 # limitations under the License.
 #
 
-
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_rmx2117.mk
 
 COMMON_LUNCH_CHOICES := \
-	twrp_rmx2117-userdebug \
-	twrp_rmx2117-eng
+    twrp_rmx2117-eng

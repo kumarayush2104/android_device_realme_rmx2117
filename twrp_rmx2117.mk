@@ -28,27 +28,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Inherit from TWRP common configurations
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
+# Inherit from oppo6853 device
+$(call inherit-product, device/realme/rmx2117/device.mk)
 
-## Device identifier. This must come after all inclusions
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rmx2117
 PRODUCT_NAME := twrp_rmx2117
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme Narzo 30 Pro 5G
 PRODUCT_MANUFACTURER := realme
 
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31 \
-    ro.bootimage.build.date.utc=0 \
-    ro.build.date.utc=0
-
-# Extra required packages
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    fastbootd
-
-
-# Extra required packages
-PRODUCT_PACKAGES += \
-    libion
